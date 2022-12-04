@@ -1,3 +1,3 @@
 <?php
-const TEST_CONSTANTA = 'asd';
 
+const TEST_CONSTANTA = 'asd';
