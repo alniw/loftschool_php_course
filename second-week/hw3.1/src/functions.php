@@ -15,12 +15,18 @@ function task1()
 {
     $usersBefore = buildUsersArray();
     echo 'Вывод пользователей после конвертации в формат json: ';
+    echo '<br>';
     convertArrayToJson($usersBefore);
     $usersAfter = convertJsonToArray('users.json');
+    echo '<br>';
     echo 'Вывод пользователей после обратной конвертации в массив: ';
+    echo '<br>';
     print_r($usersAfter);
+    echo '<br>';
     echo 'Вывод количества пользователей с каждым из имён: ';
+    echo '<br>';
     print_r(getUniqueNamesCount($usersAfter));
+    echo '<br>';
     echo 'Средний возраст пользователей = ' . getAgeAverage($usersAfter);
 }
 
