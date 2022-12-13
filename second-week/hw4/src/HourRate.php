@@ -1,6 +1,6 @@
 <?php
 
-class HourAbstractRate extends AbstractRate
+class HourRate extends AbstractRate
 {
 
     public function __construct(int $distance, int $minutes)

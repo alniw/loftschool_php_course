@@ -6,7 +6,7 @@ require '../src/SecondDriverTrait.php';
 require '../src/OptionsTrait.php';
 require '../src/AbstractRate.php';
 require '../src/BaseRate.php';
-require '../src/HourAbstractRate.php';
+require '../src/HourRate.php';
 require '../src/StudentAbstractRate.php';
 
 echo 'Кейс 1. Тариф базовый (5 км, 1 час)
@@ -21,7 +21,7 @@ $totalPrice = $baseRate->getBasePrice() + $baseRate->getGpsOptionPrice($baseRate
 echo "Стоимость поедки = $totalPrice <br>";
 
 echo 'Кейс 3. Тариф почасовой без опций. Поездка длилась 61 минуту <br>';
-$hourRate = new HourAbstractRate(5, 61);
+$hourRate = new HourRate(5, 61);
 $totalPrice = $hourRate->getBasePrice();
 echo "Стоимость поедки = $totalPrice <br>";
 
