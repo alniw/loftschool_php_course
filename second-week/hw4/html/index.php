@@ -20,12 +20,19 @@ $baseRate = new BaseRate(5, 60);
 $totalPrice = $baseRate->getBasePrice() + $baseRate->getGpsOptionPrice($baseRate, 15) + $baseRate->getSecondDriverOptionPrice();
 echo "Стоимость поедки = $totalPrice <br>";
 
-echo 'Кейс 3. Тариф почасовой без опций. Поездка длилась 61 минуту <br>';
+echo 'Кейс 3. Тариф почасовой без опций (5 км, 1 час 1 мин) <br>';
 $hourRate = new HourRate(5, 61);
 $totalPrice = $hourRate->getBasePrice();
 echo "Стоимость поедки = $totalPrice <br>";
 
-echo 'Кейс 4. Тариф студенческий без опций (5 км, 1 час)<br>';
+echo 'Кейс 4. Тариф почасовой с двумя опциями. (15 км, 3 час 1 мин) <br>';
+$hourRate = new HourRate(15, 181);
+$totalPrice = $hourRate->getBasePrice() + $hourRate->getGpsOptionPrice($hourRate, 15) + $hourRate->getSecondDriverOptionPrice();
+echo "Стоимость поедки = $totalPrice <br>";
+
+echo 'Кейс 5. Тариф студенческий без опций (5 км, 1 час)<br>';
 $hourRate = new StudentAbstractRate(5, 60);
 $totalPrice = $hourRate->getBasePrice();
 echo "Стоимость поедки = $totalPrice <br>";
+
+

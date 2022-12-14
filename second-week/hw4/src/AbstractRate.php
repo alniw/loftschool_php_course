@@ -6,20 +6,20 @@ abstract class AbstractRate implements RateInterface
     protected $pricePerKilometer;
     protected $pricePerMinute;
     protected int $distance;
-    protected int $time;
+    protected int $minutes;
     protected array $options;
 
     public function __construct(int $distance, int $minutes, $pricePerKilometer, $pricePerTimeUnit)
     {
         $this->distance = $distance;
-        $this->time = $minutes;
+        $this->minutes = $minutes;
         $this->pricePerKilometer = $pricePerKilometer;
         $this->pricePerMinute = $pricePerTimeUnit;
     }
 
     public function getBasePrice()
     {
-        return $this->pricePerKilometer * $this->distance + $this->pricePerMinute * $this->time;
+        return $this->pricePerKilometer * $this->distance + $this->pricePerMinute * $this->minutes;
     }
 
     public function getDistance(): int
@@ -29,6 +29,6 @@ abstract class AbstractRate implements RateInterface
 
     public function getUsageMinutes(): int
     {
-        return $this->time;
+        return $this->minutes;
     }
 }
